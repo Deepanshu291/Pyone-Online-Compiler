@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    border-radius: 50%;
+    margin: 8px;
+}
+label{
+    font-family: "Bangers", sans-serif;
+    font-size: 35px;
+    color: yellow;
+
+}
+body{
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(216, 81, 3) 12%, rgb(252, 122, 0) 17.9%, rgb(253, 153, 60) 21.9%, rgb(255, 163, 77) 23.4%,rgb(16, 22, 27) 29.5%,   rgb(4, 5, 5) 66%);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% ); */
+    /* background-color: #3a1c71 → #d76d77 → #ffaf7b; */
+    height: 100vh;
+}
+.title{
+    font-size: 50px;
+    /* font-weight: bold; */
+    color:  rgb(255, 124, 0);
+    padding: 4px;
+    font-family: "Monoton", sans-serif;
+    letter-spacing: 5px;
+}
+a{
+    text-decoration: none;
+}
+header{
+    -webkit-backdrop-filter:  blur(8px);
+    backdrop-filter:  blur(8px);
+    padding: 0 20px;
+    display: flex;
+    /* background-color: b; */
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-area{
+    list-style: none;
+}
+.nav-area li{
+    display: inline-block;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+.nav-area li a{
+    transition: .3s;
+    color: lightslategray;
+}
+.nav-area li a{
+    color: lightslategray;
+}
+button{
+    padding: 9px 25px;
+    margin: 2px 10px;
+    background-color: whitesmoke;
+    border-width: 4px;
+    border-radius: 40px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    color: green;
+    font-weight: 600;
+    border-color: #50C878;
+    
+}
+button:hover{
+    background-color: #50C878;
+    color: white;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+}
+
+#codeEditor, #lineCounter {
+    font-family: lucida console, courier new, courier, monospace;
+    margin: 0;
+    padding: 10px 0;
+    height: 55vh;
+    border-radius: 20px 0;
+    resize: none;
+    font-size: 16px;
+    line-height: 1.2;
+    /* outline: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; */
+}
+
+#codeEditor2, #lineCounter2 {
+    font-family: lucida console, courier new, courier, monospace;
+    margin: 0;
+    padding: 10px 0;
+    height: 30vh;
+    /* border-radius: 20px 0; */
+    resize: none;
+    font-size: 16px;
+    line-height: 1.2;
+    /* outline: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; */
+}
+
+#lineCounter:focus-visible,
+#codeEditor:focus-visible {
+    outline:none;
+}
+#codeEditor{
+  margin-left: 20px;
+  padding-left: 3rem;
+  border-radius:20px 20px 20px 20px ;
+  /* position: absolute; */
+ 
+}
+
+#lineCounter {
+    display: flex;
+    border-color: transparent;
+    overflow-y: hidden;
+    padding-right: 5px;
+    text-align: right;
+    box-shadow: none;
+    color: #707070;
+    background-color: #d8d8d8;
+    position: absolute;
+    /* left: 0; */
+    width: 3.5rem;
+    /* Determine appearance of line counter */
+    background-color:#22221f;
+    border-color:  rgb(236, 216, 101);
+    border-width: 4px;
+    border-right: none;
+    color:#928869;
+    border-radius:20px 0 0 20px;
+}
+
+
+textarea{
+    border-width: 4px;
+    border-radius: 15px;
+    font-size: 20px;
+    border-color: rgb(236, 216, 101);
+    padding: 20px 75px;
+    color: whitesmoke;
+    background-color: #2C3639;
+background-attachment: local;
+background-repeat: no-repeat;
+}
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 9px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-width: 3px;
+    border-color: gold;
+  }
+  .dnd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border-radius: 20px;
+    
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: goldenrod;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+
+}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: gold;
+  }
+
+
+
+
+
+  

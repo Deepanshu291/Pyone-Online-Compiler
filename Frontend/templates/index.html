@@ -1,0 +1,122 @@
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
+    <link rel="stylesheet" href=" {% static '/css/style.css' %}">
+    <link rel="stylesheet" href=" {% static '/css/loading.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD CODE :) </title>
+    <script src=" {% static '/js/main.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href=" {% static 'assets/alien.png' %}">
+
+</head>
+<body>
+  
+    <div class="loading" id="loading">
+        <div class="content">
+            <div class="planet">
+               <div class="ring"></div>
+                  <div class="cover-ring"></div>
+               <div class="spots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+         
+               </div>
+            </div>
+            <p>loading</p>
+         </div>
+    </div>
+    <!-- put loading gif here -->
+    <header class="h1">
+        <!-- <div class="logo_div" style="display: flex; justify-content: space-between; align-items: center;"> -->
+        <img src=" {% static '/assets/alien.png' %}" alt="logo" class="logo" height="60px" width="70px">
+
+        <div class="title">
+            AD CODE ONLINE
+        </div>
+        <!-- </div> -->
+        <a class="btn" type="submit" onclick="submitform()"><button>RUN THIS SH*T!!</button></a>
+    </header> <br><br>
+
+    <form id="code"  method="post" action="/">
+        {% csrf_token %}
+            <div>
+                <label for="CODE">CODE</label><br><br>
+                <p><textarea id='lineCounter' wrap='off' readonly>1.</textarea>
+                    <textarea name="codearea" id='codeEditor' spellcheck="false" wrap="off" cols="70" > {{code}} </textarea></p>
+                
+                {% comment %} <textarea name="codearea" spellcheck="false" id="codearea" type="text"  cols="70" rows="26">   {{code}} </textarea><br> {% endcomment %}
+                <div class="dnd">
+                    <button>DOWNLOAD</button>
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a href="#">PYTHON</a>
+                            <a href="#">C++</a>
+                            <a href="#">JAVA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <div class="right">
+
+        <label for="INPUT">INPUT</label><br><br>
+        {% comment %} <p><textarea class="inline" id='lineCounter2' wrap='off' readonly>1.</textarea> {% endcomment %}
+            {% comment %} <textarea class="inputarea" id='codeEditor2' cols="70" ></textarea></p> {% endcomment %}
+        <textarea name="inputarea" id="INPUT" wrap="off"   cols="40" rows="10"> {{input}} </textarea><br><br>
+        
+        <label for="OUTPUT">OUTPUT</label><br><br>
+        <textarea name="outputarea" id="OUTPUT" wrap="off" cols="40" rows="12" disabled>{{output }}</textarea>
+    </div>
+        </form>
+        {% comment %} <script src="prism.js" data-manual></script> {% endcomment %}
+        {% comment %} <script>
+            codeInput.registerTemplate("code-input", codeInput.templates.prism(Prism, [new codeInput.plugins.Indent()]));
+          </script> {% endcomment %}
+        <script src=" {% static '/js/loading.js' %} "></script>
+        <script>
+            var codeEditor = document.getElementById('codeEditor');
+var lineCounter = document.getElementById('lineCounter');
+
+var lineCountCache = 0;
+function line_counter() {
+      var lineCount = codeEditor.value.split('\n').length;
+      var outarr = new Array();
+      if (lineCountCache != lineCount) {
+         for (var x = 0; x < lineCount; x++) {
+            outarr[x] = (x + 1) + '.';
+         }
+         lineCounter.value = outarr.join('\n');
+      }
+      lineCountCache = lineCount;
+}
+codeEditor.addEventListener('input', () => {
+    line_counter();
+});
+
+codeEditor.addEventListener('keydown', (e) => {
+       let { keyCode } = e;
+       let { value, selectionStart, selectionEnd } = codeEditor;
+if (keyCode === 9) {  // TAB = 9
+         e.preventDefault();
+         codeEditor.value = value.slice(0, selectionStart) + '\t' + value.slice(selectionEnd);
+         codeEditor.setSelectionRange(selectionStart+2, selectionStart+2)
+       }
+ });
+        </script>
+</body>
+</html>
+
+
+
+
+
+
