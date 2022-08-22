@@ -15,41 +15,21 @@
     <link rel="stylesheet"  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src=" {% static '/js/highlight.js' %}"></script>
-    <script src=" {% static '/js/linecount.js' %}"></script>
+    
     <script src=" {% static '/js/loading.js' %}"></script>
 </head>
 <body >
     <div >
         
-        {% block loading %}
-        
-        {% endblock  %} 
+        {% include "loading.html" %}
         
         {% block content %}
         
-        
         {% endblock  %}
+
+
     </div>
-
-    <script>
-        var codeEditor = document.getElementById('codeEditor');
-var lineCounter = document.getElementById('lineCounter');
-
-var lineCountCache = 0;
-function line_counter() {
-      var lineCount = codeEditor.value.split('\n').length;
-      var outarr = new Array();
-      if (lineCountCache != lineCount) {
-         for (var x = 0; x < lineCount; x++) {
-            outarr[x] = (x + 1) + '.';
-         }
-         lineCounter.value = outarr.join('\n');
-      }
-      lineCountCache = lineCount;
-}
-codeEditor.addEventListener('input', () => {
-    line_counter();
-});
-    </script>
+<script src=" {% static '/js/linecount.js' %}"></script>
+   
 </body>
 </html>
