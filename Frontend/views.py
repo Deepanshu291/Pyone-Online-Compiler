@@ -1,5 +1,8 @@
+
 import sys
-from django.shortcuts import render
+from django.shortcuts import *
+from Frontend.models import User
+from django.contrib.auth import authenticate , login ,logout
 
 # Create your views here.
 def home(request):
@@ -33,7 +36,29 @@ def home(request):
     
     return render(request, 'home.html',data)
 
+def signup(req):
+    # user = User()
+    if req.method == "POST":
+        name = req.POST['name']
+        email = req.POST['email']
+        psw = req.POST['psw']
+        cpsw = req.POST['cpsw']
+        if psw == cpsw:
+            print(name,email,psw,cpsw)
+            user = User(name = name, email = email,psw = psw, is_active= True)
+            user.save()
+            return redirect("/login")
+        else: 
+            print("Confirm password is not same")
+        # pass 
+    # return render(req, "loginpage.html")
 
-
-def base(req):
+def login(req):
+    user = User()
+    if req.method == "POST":
+        lname = req.POST['lname']
+        lpsw = req.POST['psw']
+        user.authenticate(name=lname,psw=lpsw)
+        print(lname,lpsw) 
+        return redirect("/") 
     return render(req, "loginpage.html")

@@ -14,15 +14,16 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="/login/" method="POST" class="sign-in-form">
+            {% csrf_token %}
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input name="lname" type="text" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input name="psw" type="password" placeholder="Password" />
             </div>
             <input type="submit" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
@@ -41,23 +42,25 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+
+          <form action="/signup/" method="POST" class="sign-up-form">
+           {% csrf_token %}
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input name="name" type="text" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input name="email" type="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input name="psw" type="password" placeholder="Password" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="cpassword" placeholder="Confirm Password" />
+              <input name="cpsw" type="cpassword" placeholder="Confirm Password" />
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
