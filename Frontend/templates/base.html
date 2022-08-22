@@ -24,45 +24,17 @@
 </head>
 <body >
     <div >
-<<<<<<< HEAD
-        
-        {% include "loading.html" %}
-=======
-<<<<<<< HEAD
-        {% block loading %}
-        
-        {% endblock  %} 
-=======
->>>>>>> 61f35e73272d61de501c7a2684a73d23cd5bd19a
-        
-        {% include "loading.html" %}
->>>>>>> bdb12ff0278f3766705b21fec74579a0b17c6f3d
-        
-<<<<<<< HEAD
-        {% endblock  %}
-        
 
-
-=======
-        {% block content %}
         
-        {% endblock  %}
-<<<<<<< HEAD
-        {% block footer %}
-        
-        {% endblock footer %}
+       {% include 'loading.html' %}
+       {% block content %}
+       
+       {% endblock content %}
     </div>
     {% comment %} <script src=" {% static '/js/loginpage.js' %} "></script> {% endcomment %}
-    <script>
+    {% comment %} <script>
         var codeEditor = document.getElementById('codeEditor');
-var lineCounter = document.getElementById('lineCounter');
-=======
-        
-
->>>>>>> bdb12ff0278f3766705b21fec74579a0b17c6f3d
-
->>>>>>> 61f35e73272d61de501c7a2684a73d23cd5bd19a
-    </div>
+var lineCounter = document.getElementById('lineCounter'); {% endcomment %}
 <script src=" {% static '/js/linecount.js' %}"></script>
    
 </body>
