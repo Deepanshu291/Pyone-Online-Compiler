@@ -36,4 +36,4 @@ def home(request):
 
 
 def base(req):
-    return render(req, "loading.html")
+    return render(req, "loginpage.html")
