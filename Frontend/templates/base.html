@@ -2,6 +2,11 @@
 
 <html lang="en">
 <head>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    {% comment %} <link rel="stylesheet" href=" {% static '/css/loginpage.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
     <link rel="stylesheet" href=" {% static '/css/style.css' %}">
@@ -19,15 +24,44 @@
 </head>
 <body >
     <div >
+<<<<<<< HEAD
         
         {% include "loading.html" %}
+=======
+<<<<<<< HEAD
+        {% block loading %}
         
-        {% block content %}
+        {% endblock  %} 
+=======
+>>>>>>> 61f35e73272d61de501c7a2684a73d23cd5bd19a
         
+        {% include "loading.html" %}
+>>>>>>> bdb12ff0278f3766705b21fec74579a0b17c6f3d
+        
+<<<<<<< HEAD
         {% endblock  %}
         
 
 
+=======
+        {% block content %}
+        
+        {% endblock  %}
+<<<<<<< HEAD
+        {% block footer %}
+        
+        {% endblock footer %}
+    </div>
+    {% comment %} <script src=" {% static '/js/loginpage.js' %} "></script> {% endcomment %}
+    <script>
+        var codeEditor = document.getElementById('codeEditor');
+var lineCounter = document.getElementById('lineCounter');
+=======
+        
+
+>>>>>>> bdb12ff0278f3766705b21fec74579a0b17c6f3d
+
+>>>>>>> 61f35e73272d61de501c7a2684a73d23cd5bd19a
     </div>
 <script src=" {% static '/js/linecount.js' %}"></script>
    
