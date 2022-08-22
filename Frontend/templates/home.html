@@ -1,0 +1,70 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="loading" id="loading">
+    <div class="content">
+        <div class="planet">
+           <div class="ring"></div>
+              <div class="cover-ring"></div>
+           <div class="spots">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+     
+           </div>
+        </div>
+        <p>loading</p>
+     </div>
+ </div>
+
+<header class="h1">
+    <!-- <div class="logo_div" style="display: flex; justify-content: space-between; align-items: center;"> -->
+    <img src=" {% static '/assets/alien.png' %}" alt="logo" class="logo" height="60px" width="70px">
+
+    <div class="title">
+        DEV COMPILER
+    </div>
+    <!-- </div> -->
+    <a class="btn" type="submit" onclick="submitform()"><button>RUN THIS SH*T!!</button></a>
+</header> <br><br>
+
+<form id="code"  method="post" action="/">
+    {% csrf_token %}
+        <div>
+            <label for="CODE">CODE</label><br><br>
+            <p><textarea id='lineCounter' wrap='off' readonly>1.</textarea>
+                <textarea name="codearea" is="highlighted-code" language="python" tab-size="2" id='codeEditor' spellcheck="false" wrap="off" cols="70" > {{code}} </textarea></p>
+            
+            {% comment %} <textarea name="codearea" spellcheck="false" id="codearea" type="text"  cols="70" rows="26">   {{code}} </textarea><br> {% endcomment %}
+            <div class="dnd">
+                <button>DOWNLOAD</button>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#">PYTHON</a>
+                        <a href="#">C++</a>
+                        <a href="#">JAVA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="right">
+
+    <label for="INPUT">INPUT</label><br><br>
+    {% comment %} <p><textarea class="inline" id='lineCounter2' wrap='off' readonly>1.</textarea> {% endcomment %}
+        {% comment %} <textarea class="inputarea" id='codeEditor2' cols="70" ></textarea></p> {% endcomment %}
+    <textarea name="inputarea" id="INPUT" wrap="off"   cols="40" rows="10"> {{input}} </textarea><br><br>
+    
+    <label for="OUTPUT">OUTPUT</label><br><br>
+    <textarea name="outputarea" id="OUTPUT" wrap="off" cols="40" rows="12" disabled>{{output }}</textarea>
+</div>
+    </form>
+{% endblock content %}

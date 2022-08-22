@@ -11,10 +11,14 @@
     <title>AD CODE :) </title>
     <script src=" {% static '/js/main.js' %}"></script>
     <link rel="icon" type="image/x-icon" href=" {% static 'assets/alien.png' %}">
-
+    <link rel="stylesheet"  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src=" {% static '/js/highlight.js' %}"></script>
+    <script src=" {% static '/js/linecount.js' %}"></script>
+    <script src=" {% static '/js/loading.js' %}"></script>
 </head>
 <body>
-  
+   
     <div class="loading" id="loading">
         <div class="content">
             <div class="planet">
@@ -40,7 +44,7 @@
         <img src=" {% static '/assets/alien.png' %}" alt="logo" class="logo" height="60px" width="70px">
 
         <div class="title">
-            AD CODE ONLINE
+            DEV 
         </div>
         <!-- </div> -->
         <a class="btn" type="submit" onclick="submitform()"><button>RUN THIS SH*T!!</button></a>
@@ -51,7 +55,7 @@
             <div>
                 <label for="CODE">CODE</label><br><br>
                 <p><textarea id='lineCounter' wrap='off' readonly>1.</textarea>
-                    <textarea name="codearea" id='codeEditor' spellcheck="false" wrap="off" cols="70" > {{code}} </textarea></p>
+                    <textarea name="codearea" is="highlighted-code" language="python" tab-size="2" id='codeEditor' spellcheck="false" wrap="off" cols="70" > {{code}} </textarea></p>
                 
                 {% comment %} <textarea name="codearea" spellcheck="false" id="codearea" type="text"  cols="70" rows="26">   {{code}} </textarea><br> {% endcomment %}
                 <div class="dnd">
@@ -77,41 +81,8 @@
         <textarea name="outputarea" id="OUTPUT" wrap="off" cols="40" rows="12" disabled>{{output }}</textarea>
     </div>
         </form>
-        {% comment %} <script src="prism.js" data-manual></script> {% endcomment %}
-        {% comment %} <script>
-            codeInput.registerTemplate("code-input", codeInput.templates.prism(Prism, [new codeInput.plugins.Indent()]));
-          </script> {% endcomment %}
-        <script src=" {% static '/js/loading.js' %} "></script>
-        <script>
-            var codeEditor = document.getElementById('codeEditor');
-var lineCounter = document.getElementById('lineCounter');
-
-var lineCountCache = 0;
-function line_counter() {
-      var lineCount = codeEditor.value.split('\n').length;
-      var outarr = new Array();
-      if (lineCountCache != lineCount) {
-         for (var x = 0; x < lineCount; x++) {
-            outarr[x] = (x + 1) + '.';
-         }
-         lineCounter.value = outarr.join('\n');
-      }
-      lineCountCache = lineCount;
-}
-codeEditor.addEventListener('input', () => {
-    line_counter();
-});
-
-codeEditor.addEventListener('keydown', (e) => {
-       let { keyCode } = e;
-       let { value, selectionStart, selectionEnd } = codeEditor;
-if (keyCode === 9) {  // TAB = 9
-         e.preventDefault();
-         codeEditor.value = value.slice(0, selectionStart) + '\t' + value.slice(selectionEnd);
-         codeEditor.setSelectionRange(selectionStart+2, selectionStart+2)
-       }
- });
-        </script>
+      
+    
 </body>
 </html>
 

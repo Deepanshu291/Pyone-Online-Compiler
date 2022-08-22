@@ -31,4 +31,9 @@ def home(request):
             'output':output
         }
     
-    return render(request, 'index.html',data)
+    return render(request, 'home.html',data)
+
+
+
+def base(req):
+    return render(req, "loading.html")
