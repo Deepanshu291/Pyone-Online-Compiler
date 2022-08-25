@@ -6,25 +6,40 @@
 
 <header class="h1">
     <!-- <div class="logo_div" style="display: flex; justify-content: space-between; align-items: center;"> -->
-    <img src=" {% static '/assets/alien.png' %}" alt="logo" class="logo" height="60px" width="70px">
-
+        <div class="logodiv">
+        <img src=" {% static '/assets/alien.png' %}" alt="logo " class="logo" height="60px" width="70px">
+        {% if user.is_authenticated %}
+        <h1>{{user.username}}</h1>
+        
+        
+        {% endif %}
+    </div>
     <div class="title">
-        DEV COMPILER
+        DEV Compiler V2
     </div>
     <!-- </div> -->
-    <a class="btn" type="submit" onclick="submitform()"><button>RUN THIS SH*T!!</button></a>
-</header> <br><br>
+    <div>
+    {% if user.is_authenticated %}
+    <a href="/logout/"><button class="btn-danger">Logout</button></a> 
+    <a class="btn" type="submit" onclick="submitform()"><button class="btn-success">RUN THIS SH*T!!</button></a>
+    {% else %}
+    <a  href="/login" type="button" ><button class="btn-success">Login</button></a>
+    {% endif %}
+</div>
+   
+</header> <br><br> 
 
 <form id="code"  method="post" action="/">
     {% csrf_token %}
         <div>
             <label for="CODE">CODE</label><br><br>
             <p><textarea id='lineCounter' wrap='off' readonly>1.</textarea>
-                <textarea name="codearea" is="highlighted-code" language="python" tab-size="2" id='codeEditor' spellcheck="false" wrap="off" cols="70" > {{code}} </textarea></p>
+                <textarea name="codearea" is="highlighted-code" language="python" tab-size="2" id='codeEditor' spellcheck="false" wrap="virtual" cols="70" > {{code}} </textarea></p>
             
             {% comment %} <textarea name="codearea" spellcheck="false" id="codearea" type="text"  cols="70" rows="26">   {{code}} </textarea><br> {% endcomment %}
             <div class="dnd">
-                <button>DOWNLOAD</button>
+               
+                <button class="btn-secondary">DOWNLOAD</button>
                 <div class="dropdown">
                     <button class="dropbtn">Dropdown</button>
                     <div class="dropdown-content">

@@ -2,6 +2,10 @@
 
 <html lang="en">
 <head>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
     <link rel="stylesheet" href=" {% static '/css/style.css' %}">
@@ -13,22 +17,22 @@
     <script src=" {% static '/js/main.js' %}"></script>
     <link rel="icon" type="image/x-icon" href=" {% static 'assets/alien.png' %}">
     <link rel="stylesheet"  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src=" {% static '/js/highlight.js' %}"></script>
-    
     <script src=" {% static '/js/loading.js' %}"></script>
 </head>
 <body >
     <div >
-        
-        {% include "loading.html" %}
-        
-        {% block content %}
-        
-        {% endblock  %}
-
-
+       {% include 'loading.html' %}
+       {% block content %}
+       
+       {% endblock content %}
     </div>
+    {% comment %} <script src=" {% static '/js/loginpage.js' %} "></script> {% endcomment %}
+    {% comment %} <script>
+        var codeEditor = document.getElementById('codeEditor');
+var lineCounter = document.getElementById('lineCounter'); {% endcomment %}
 <script src=" {% static '/js/linecount.js' %}"></script>
    
 </body>
