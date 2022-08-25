@@ -34,6 +34,12 @@
         var codeEditor = document.getElementById('codeEditor');
 var lineCounter = document.getElementById('lineCounter'); {% endcomment %}
 <script src=" {% static '/js/linecount.js' %}"></script>
-   
+   <script>
+    function getSelectValue(){
+      var selectedValue = document.getElementById("list").value;
+      console.log(selectedValue);
+  }
+  getSelectValue();
+   </script>
 </body>
 </html>
