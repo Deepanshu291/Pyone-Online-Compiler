@@ -1,4 +1,7 @@
 
+import codecs
+import os
+import subprocess
 import sys
 from typing import final
 from django.shortcuts import *
@@ -8,13 +11,17 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
 # Create your views here.
-def home(request):
+def   home(request):
     data ={}
     if request.method == 'POST':
         code = request.POST['codearea']
         input_part = request.POST['inputarea']
         intputdata = input_part
         input_part = input_part.replace("\n"," ").split(" ")
+        f = open("code.py", "w")
+        # print(code)
+        f.write(code)
+        # output= RunCode()
         def input():
             a = input_part[0]
             del input_part[0]
@@ -39,6 +46,21 @@ def home(request):
     
     return render(request, 'home.html',data)
 
+def RunCode():
+    compile_java('code.java')
+    return execute_java('code.java')
+
+def compile_java(java_file):
+    subprocess.check_call(['javac', java_file])
+
+def execute_java(java_file):
+    java_class,ext = os.path.splitext(java_file)
+    cmd = ['java', java_class]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    stdout,stderr = proc.communicate()
+    return stdout.decode()
+
+
 def signup(req):
     # user = User()
     if req.method == "POST":
@@ -51,6 +73,7 @@ def signup(req):
             try:
                 user = User.objects.create_user(username=username,email=email,password=psw)
                 user.save()
+                messages.success(req,"Account Create Successful")
             except:
                messages.warning(req,"Use another username") 
             

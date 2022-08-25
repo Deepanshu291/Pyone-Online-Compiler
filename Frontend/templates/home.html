@@ -40,14 +40,19 @@
             <div class="dnd">
                
                 <button class="btn-secondary">DOWNLOAD</button>
-                <div class="dropdown">
+                {% comment %} <div class="dropdown">
                     <button class="dropbtn">Dropdown</button>
                     <div class="dropdown-content">
                         <a href="#">PYTHON</a>
                         <a href="#">C++</a>
                         <a href="#">JAVA</a>
                     </div>
-                </div>
+                </div> {% endcomment %}
+                <select  class="dropbtn" id="list" onchange="getSelectValue();">
+                    <option  value="python">Python</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                </select>
             </div>
         </div>
 <div class="right">
