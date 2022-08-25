@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> {% endcomment %}
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> {% endcomment %}
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
@@ -86,9 +88,14 @@
         <div class="panel left-panel">
           <div class="content">
             <h3>New here ?</h3>
-           <p>
-            sign in here!
-           </p>
+            <p></p>
+            {% for message in messages %}
+            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {{ message }}
+                
+            </p>
+              {% endfor %}
+
             <button class="btn transparent" id="sign-up-btn">
               Sign up
             </button>
@@ -98,10 +105,13 @@
         <div class="panel right-panel">
           <div class="content">
             <h3>One of us ?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
+            {% for message in messages %}
+            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {{ message }}
+                
             </p>
+              {% endfor %}
+              
             <button class="btn transparent" id="sign-in-btn">
               Sign in
             </button>

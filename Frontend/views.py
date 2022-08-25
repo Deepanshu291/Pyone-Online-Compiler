@@ -1,8 +1,11 @@
 
 import sys
+from typing import final
 from django.shortcuts import *
 from Frontend.models import User
-from django.contrib.auth import authenticate , login ,logout
+from django.contrib.auth.models import User, AnonymousUser
+from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -39,26 +42,43 @@ def home(request):
 def signup(req):
     # user = User()
     if req.method == "POST":
-        name = req.POST['name']
+        username = req.POST['name']
         email = req.POST['email']
         psw = req.POST['psw']
         cpsw = req.POST['cpsw']
         if psw == cpsw:
-            print(name,email,psw,cpsw)
-            user = User(name = name, email = email,psw = psw, is_active= True)
-            user.save()
+            print(username,email,psw)
+            try:
+                user = User.objects.create_user(username=username,email=email,password=psw)
+                user.save()
+            except:
+               messages.warning(req,"Use another username") 
+            
             return redirect("/login")
         else: 
             print("Confirm password is not same")
+            messages.warning(req,"Confirm password is not same") 
+            return redirect("login")
         # pass 
     # return render(req, "loginpage.html")
 
-def login(req):
-    user = User()
+def loginpage(req):
+    # user = User()
     if req.method == "POST":
         lname = req.POST['lname']
         lpsw = req.POST['psw']
-        user.authenticate(name=lname,psw=lpsw)
-        print(lname,lpsw) 
-        return redirect("/") 
+        
+        user =  authenticate(username=lname,password=lpsw)
+        # print(user)
+        if user is not None:
+            login(req,user)
+            return redirect(to="home")
+        # print(lname,lpsw)
+        messages.error(req,"Incorrect Username and Password")
+        return redirect(to="login") 
+    
     return render(req, "loginpage.html")
+
+def userlogout(req):
+        logout(req)
+        return redirect(to='home')

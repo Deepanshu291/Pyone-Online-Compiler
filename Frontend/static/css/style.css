@@ -6,6 +6,7 @@
     border-radius: 50%;
     margin: 8px;
 }
+
 label{
     font-family: "Bangers", sans-serif;
     font-size: 35px;
@@ -27,6 +28,16 @@ body{
     padding: 4px;
     font-family: "Monoton", sans-serif;
     letter-spacing: 5px;
+    
+}
+
+.logodiv{
+    display: flex; 
+    justify-content: center;
+    align-items:center; 
+    color: white;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 a{
     text-decoration: none;
@@ -59,19 +70,62 @@ button{
     padding: 9px 25px;
     margin: 2px 10px;
     background-color: whitesmoke;
-    border-width: 4px;
-    border-radius: 40px;
+    /* border-width: 4px; */
+    border-radius: 20px;
     transition: all 0.3s ease 0s;
     cursor: pointer;
-    color: green;
-    font-weight: 600;
-    border-color: #50C878;
+    /* color: green; */
+    font-weight: 800;
+    letter-spacing: 1.3;
+    /* border-color: #50C878; */
     
 }
 button:hover{
-    background-color: #50C878;
+    /* background-color: #50C878; */
     color: white;
 }
+
+.btn-danger{
+    color: #f7786b;
+    /* border-color: #c94c4c; */
+    border: 3px solid #c94c4c;
+}
+
+.btn-danger:hover{
+    background-color: #c94c4c;
+    color: white;
+}
+
+.btn-success{
+    color:  #4CAF50 ;
+    border: 3px solid #03c450;
+}
+
+.btn-success:hover{
+    background-color: #03c450;
+    color: white;
+}
+
+.btn-secondary{
+    color:  #bc62f3 ;
+    border: 3px solid #B23CFD;
+}
+
+.btn-secondary:hover{
+    background-color: #B23CFD;
+    color: white;
+}
+
+.btn-warning{
+    color:  #f7b635 ;
+    border: 3px solid #FFA900;
+}
+
+.btn-warning:hover{
+    background-color: #FFA900;
+    color: white;
+}
+/* btn-success */
 
 form{
     display: flex;
