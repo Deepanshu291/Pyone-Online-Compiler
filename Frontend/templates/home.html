@@ -4,7 +4,27 @@
 {% load static %}
 {% block content %}
 
+
+
 <header class="h1">
+{% if user.is_authenticated %}
+<div  class="alert alert-success"  >
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Login Successful
+  </div> 
+  {% else %}
+  <div  class="alert alert-warning"  >
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    Login First Before Run the code
+  </div>
+{% endif %}
+
+    {% for message in messages %}
+           <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} >
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+         {{message}}
+        </div> 
+              {% endfor %}
     <!-- <div class="logo_div" style="display: flex; justify-content: space-between; align-items: center;"> -->
         <div class="logodiv">
         <img src=" {% static '/assets/alien.png' %}" alt="logo " class="logo" height="60px" width="70px">
@@ -22,7 +42,7 @@
     {% if user.is_authenticated %}
     <a href="/logout/"><button class="btn-danger">Logout</button></a> 
     <a class="btn" type="submit" onclick="submitform()"><button class="btn-success">RUN THIS SH*T!!</button></a>
-    {% else %}
+    {% else %} 
     <a  href="/login" type="button" ><button class="btn-success">Login</button></a>
     {% endif %}
 </div>

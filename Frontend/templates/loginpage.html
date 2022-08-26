@@ -13,8 +13,15 @@
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container">     
       <div class="forms-container">
+        {% for message in messages %}
+           <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} >
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+         {{message}}
+        </div> 
+              {% endfor %}
+        
         <div class="signin-signup">
           <form action="/login/" method="POST" class="sign-in-form">
             {% csrf_token %}
@@ -50,19 +57,20 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input name="name" type="text" placeholder="Username" />
+              <input name="name" type="text" autocomplete="off" placeholder="Username" />
+
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input name="email" type="email" placeholder="Email" />
+              <input name="email" type="email" autocomplete="off" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="psw" type="password" placeholder="Password" />
+              <input name="psw" type="password" autocomplete="off" placeholder="Password" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input name="cpsw" type="cpassword" placeholder="Confirm Password" />
+              <input name="cpsw" type="cpassword" autocomplete="off"  placeholder="Confirm Password" />
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
@@ -83,19 +91,25 @@
           </form>
         </div>
       </div>
-  
+    
       <div class="panels-container">
+        
         <div class="panel left-panel">
+         
           <div class="content">
             <h3>New here ?</h3>
             <p></p>
-            {% for message in messages %}
-            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
-              {{ message }}
-                
-            </p>
-              {% endfor %}
-
+            {% comment %} {% for message in messages %}
+           
+            <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} role="alert">
+             {{message}}
+            </div>
+            
+              {% endfor %} {% endcomment %}
+{% comment %}               
+              <div class="alert alert-info" role="alert">This will be the info alert</div>
+              <div class="alert alert-warning" role="alert">This will be the warning alert</div>
+              <div class="alert alert-danger" role="alert">This will be the danger alert</div> {% endcomment %}
             <button class="btn transparent" id="sign-up-btn">
               Sign up
             </button>
@@ -105,12 +119,12 @@
         <div class="panel right-panel">
           <div class="content">
             <h3>One of us ?</h3>
-            {% for message in messages %}
-            <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
-              {{ message }}
-                
-            </p>
-              {% endfor %}
+            <br> <br>
+            {% comment %} {% for message in messages %}
+            <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} role="alert">
+              {{message}}
+             </div>
+              {% endfor %} {% endcomment %}
               
             <button class="btn transparent" id="sign-in-btn">
               Sign in

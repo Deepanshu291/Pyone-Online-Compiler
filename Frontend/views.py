@@ -13,6 +13,11 @@ from django.contrib import messages
 # Create your views here.
 def   home(request):
     data ={}
+    # if User().is_authenticated:
+        
+    #     messages.warning(request,"Login First Before Run the code")  
+    # else:
+    #     messages.success(request,"Login Successful")    
     if request.method == 'POST':
         code = request.POST['codearea']
         input_part = request.POST['inputarea']
@@ -87,15 +92,15 @@ def signup(req):
 
 def loginpage(req):
     # user = User()
+    # messages.success(req, "Signup Here")
     if req.method == "POST":
         lname = req.POST['lname']
         lpsw = req.POST['psw']
-        
         user =  authenticate(username=lname,password=lpsw)
         # print(user)
         if user is not None:
             login(req,user)
-            return redirect(to="home")
+            return redirect(to="home",)
         # print(lname,lpsw)
         messages.error(req,"Incorrect Username and Password")
         return redirect(to="login") 
