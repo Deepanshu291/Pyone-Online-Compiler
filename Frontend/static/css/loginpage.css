@@ -13,7 +13,7 @@ input {
 .container {
   position: relative;
   width: 100%;
-  background-color: rgb(99, 96, 96);
+  background-color: black;
   min-height: 100vh;
   overflow: hidden;
 }
