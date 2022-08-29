@@ -59,6 +59,6 @@ $RECYCLE.BIN/
 .env
 env\
 output.txt
-code.py\
-code.java\
-code.class\
+code.py
+code.java
+code.class
