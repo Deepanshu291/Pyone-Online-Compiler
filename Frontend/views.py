@@ -12,12 +12,7 @@ from django.contrib import messages
 
 # Create your views here.
 def   home(request):
-    data ={}
-    # if User().is_authenticated:
-        
-    #     messages.warning(request,"Login First Before Run the code")  
-    # else:
-    #     messages.success(request,"Login Successful")    
+    data ={}   
     if request.method == 'POST':
         code = request.POST['codearea']
         input_part = request.POST['inputarea']
