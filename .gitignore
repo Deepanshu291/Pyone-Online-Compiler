@@ -1,58 +1,64 @@
-__pycache__/
-*.py[cod]
-db.sqlite3
-migrations/
-media/
-settings.py
-# C extensions
-*.so
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# Local History for Visual Studio Code
+.history/
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# Built Visual Studio Code Extensions
+*.vsix
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
-# Translations
-*.mo
-*.pot
+# Support for Project snippet scope
+.vscode/*.code-snippets
 
-# Django stuff:
-*.log
+# Ignore code-workspaces
+*.code-workspace
 
-# Sphinx documentation
-docs/_build/
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# PyBuilder
-target/
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+.env
+env\
+output.txt
+code.py\
+code.java\
+code.class\
