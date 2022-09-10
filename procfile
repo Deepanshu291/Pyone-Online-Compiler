@@ -1,1 +1,1 @@
-web gunicorn pyone.wsgi:application --log-file -
+web: gunicorn pyone.wsgi
