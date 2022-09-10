@@ -1,1 +1,1 @@
-web: gunicorn pyone.wsgi 
+web: gunicorn pyone.wsgi
