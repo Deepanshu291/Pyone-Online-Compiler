@@ -16,16 +16,22 @@ label{
     color: yellow;
 
 }
+html{
+  font-size: 10px;
+}
+
+
 body{
+
     background: radial-gradient(circle at -8.9% 51.2%, rgb(216, 81, 3) 12%, rgb(252, 122, 0) 17.9%, rgb(253, 153, 60) 21.9%, rgb(255, 163, 77) 23.4%,rgb(16, 22, 27) 29.5%,   rgb(4, 5, 5) 66%);
     background-repeat: no-repeat;
     background-position: center;
     /* background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% ); */
     /* background-color: #3a1c71 → #d76d77 → #ffaf7b; */
-    height: 100vh;
+    /* height: 100vh; */
 }
 .title{
-    font-size: 50px;
+    font-size: 5rem;
     /* font-weight: bold; */
     color:  rgb(255, 124, 0);
     padding: 4px;
@@ -73,7 +79,7 @@ header{
 
 button{
     padding: 9px 25px;
-    margin: 2px 10px;
+    margin: 2px 2px 0px 10px;
     background-color: whitesmoke;
     border-radius: 20px;
     transition: all 0.3s ease 0s;
@@ -134,11 +140,19 @@ form{
     justify-content: space-around;
 }
 
+.right textarea{
+  width: 50rem;
+}
+
+#codeEditor{
+  width: 82rem;
+}
+
 #codeEditor, #lineCounter {
     font-family: lucida console, courier new, courier, monospace;
     margin: 0;
     padding: 10px 0;
-    height: 55vh;
+    height: 75vh;
     border-radius: 20px 0;
     resize: none;
     font-size: 16px;
@@ -169,7 +183,7 @@ form{
     outline:none;
 }
 #codeEditor{
-  margin-left: 20px;
+  margin-left: 3rem;
   padding-left: 3rem;
   border-radius:20px 20px 20px 20px ;
   /* position: absolute; */
@@ -187,7 +201,7 @@ form{
     background-color: #d8d8d8;
     position: absolute;
     /* left: 0; */
-    width: 3.5rem;
+    width: 5rem;
     /* Determine appearance of line counter */
     background-color:#22221f;
     border-color:  rgb(236, 216, 101);
@@ -307,6 +321,7 @@ background-repeat: no-repeat;
     margin-top: 10px;
     margin: 10px 2px;
     margin-bottom: 15px;
+    font-size: 1.5rem;
   }
   
   /* The close button */
@@ -326,7 +341,19 @@ background-repeat: no-repeat;
     color: black;
   }
 
+  ::-webkit-scrollbar{
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px black;
+    background: black;
+}
 
+::-webkit-scrollbar-thumb{
+    height: 20px;
+    border-radius: 50px;
+    background: goldenrod;
+}
 
 
 

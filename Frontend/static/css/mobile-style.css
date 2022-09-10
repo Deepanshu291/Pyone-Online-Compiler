@@ -1,0 +1,44 @@
+@media screen and (max-width:1420px) {
+    form{
+        /* width: 10rem; */
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+  
+
+    .right{
+        margin-top: 2rem;
+        width: 100rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .right textarea{
+        width: 40rem;
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width:868px) {
+   html{
+     font-size: 8px;
+   }
+   #codeEditor{
+    width: 72rem;
+  }
+
+    .right{
+        margin: 2rem;
+       flex-direction: column;
+       justify-content: space-between; 
+       /* height: 50rem; */
+    }
+    .right textarea{
+        width: 60rem;
+        margin: 5rem;
+    }
+}
