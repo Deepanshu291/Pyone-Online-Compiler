@@ -18,7 +18,8 @@ footer{
     text-align: center;
 }
 .footer-content h3{
-    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-size: 5rem;
     font-weight: 400;
     text-transform: capitalize;
     line-height: 3rem;
@@ -27,7 +28,7 @@ footer{
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
-    font-size: 14px;
+    font-size: 2rem;
 }
 .social{
     list-style: none;
@@ -44,7 +45,7 @@ footer{
     color: #fff;
 }
 .social a i{
-    font-size: 1rem;
+    font-size: 2.5rem;
 }
 .social a:hover i{
     color: aqua;
@@ -56,8 +57,8 @@ footer{
     text-align: center;
 }
 .footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
+    font-size: 2rem;
+    word-spacing: 0.2rem;
     text-transform: capitalize;  
 }
 .footer-bottom span{
