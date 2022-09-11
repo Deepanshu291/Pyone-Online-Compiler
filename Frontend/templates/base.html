@@ -6,6 +6,8 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
     <link rel="stylesheet" href=" {% static '/css/style.css' %}">
@@ -29,12 +31,10 @@
        
        {% endblock content %}
     </div>
-    {% comment %} <script src=" {% static '/js/loginpage.js' %} "></script> {% endcomment %}
-    {% comment %} <script>
-        var codeEditor = document.getElementById('codeEditor');
-var lineCounter = document.getElementById('lineCounter'); {% endcomment %}
-<script src=" {% static '/js/linecount.js' %}"></script>
-   <script>
+{% include 'footer.html' %}
+
+<script src=" {% static '/js/linecount.js' %}"></script>   
+<script>
     function getSelectValue(){
       var selectedValue = document.getElementById("list").value;
       console.log(selectedValue);
