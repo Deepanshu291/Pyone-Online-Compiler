@@ -12,25 +12,11 @@
             <label for="CODE">CODE</label><br><br>
             <p><textarea id='lineCounter' wrap='off' readonly>1.</textarea>
                 <textarea name="codearea" is="highlighted-code" language="python" tab-size="2" id='codeEditor' spellcheck="false" wrap="virtual"  >{{code}}</textarea></p>
-            
-            {% comment %} <textarea name="codearea" spellcheck="false" id="codearea" type="text"  cols="70" rows="26">   {{code}} </textarea><br> {% endcomment %}
-            {% comment %} <div class="dnd">
-               
-                <button class="btn-secondary">DOWNLOAD</button>
-                <select  class="dropbtn" id="list" onchange="getSelectValue();">
-                    <option  value="python">Python</option>
-                    <option value="cpp">C++</option>
-                    <option value="java">Java</option>
-                </select>
-            </div> {% endcomment %}
         </div>
 <div class="right">
     <div>
-
-    
+ 
     <label for="INPUT">INPUT</label><br><br>
-    {% comment %} <p><textarea class="inline" id='lineCounter2' wrap='off' readonly>1.</textarea> {% endcomment %}
-        {% comment %} <textarea class="inputarea" id='codeEditor2' cols="70" ></textarea></p> {% endcomment %}
     <textarea name="inputarea" id="INPUT" wrap="off"    rows="12">{{input}}</textarea><br><br></div>
     <div>
     <label for="OUTPUT">OUTPUT</label><br><br>

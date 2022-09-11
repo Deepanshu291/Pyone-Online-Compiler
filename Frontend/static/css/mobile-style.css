@@ -1,6 +1,5 @@
 @media screen and (max-width:1420px) {
     form{
-        /* width: 10rem; */
         flex-direction: column;
         padding: 2rem;
         justify-content: center;
@@ -35,7 +34,6 @@
         margin: 2rem;
        flex-direction: column;
        justify-content: space-between; 
-       /* height: 50rem; */
     }
     .right textarea{
         width: 60rem;

@@ -19,7 +19,6 @@
              {{message}}
             </div> 
                   {% endfor %}
-        <!-- <div class="logo_div" style="display: flex; justify-content: space-between; align-items: center;"> -->
             <div class="logodiv">
             <img src=" {% static '/assets/alien.png' %}" alt="logo " class="logo" height="60px" width="70px">
             {% if user.is_authenticated %}
@@ -31,7 +30,6 @@
         <div class="title">
            PyOne
         </div>
-        <!-- </div> -->
         <div>
         {% if user.is_authenticated %}
             <a href="/logout/"><button class="btn-danger">Logout</button></a> 

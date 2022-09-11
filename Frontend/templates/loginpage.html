@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> {% endcomment %}
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> {% endcomment %}
-    <script
+     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
@@ -99,17 +97,6 @@
           <div class="content">
             <h3>New here ?</h3>
             <p></p>
-            {% comment %} {% for message in messages %}
-           
-            <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} role="alert">
-             {{message}}
-            </div>
-            
-              {% endfor %} {% endcomment %}
-{% comment %}               
-              <div class="alert alert-info" role="alert">This will be the info alert</div>
-              <div class="alert alert-warning" role="alert">This will be the warning alert</div>
-              <div class="alert alert-danger" role="alert">This will be the danger alert</div> {% endcomment %}
             <button class="btn transparent" id="sign-up-btn">
               Sign up
             </button>
@@ -120,12 +107,6 @@
           <div class="content">
             <h3>One of us ?</h3>
             <br> <br>
-            {% comment %} {% for message in messages %}
-            <div {% if message.tags %}  class="alert alert-{{message.tags}}"  {% endif %} role="alert">
-              {{message}}
-             </div>
-              {% endfor %} {% endcomment %}
-              
             <button class="btn transparent" id="sign-in-btn">
               Sign in
             </button>
