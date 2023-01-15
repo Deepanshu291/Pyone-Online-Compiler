@@ -9,19 +9,33 @@ from Frontend.models import User
 from django.contrib.auth.models import User, AnonymousUser
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.core.files.storage import FileSystemStorage
+from django.core.files import File
+from pyone.settings import BASE_DIR
 
 # Create your views here.
-def   home(request):
-    data ={}   
+def  home(request):
+    data ={} 
+    cr_user = request.user
+    print(cr_user) 
     if request.method == 'POST':
-        code = request.POST['codearea']
+        pcode = request.POST['codearea']
         input_part = request.POST['inputarea']
         intputdata = input_part
         input_part = input_part.replace("\n"," ").split(" ")
+        
         f = open("code.py", "w")
         # print(code)
-        f.write(code)
-        # output= RunCode()
+        f.write(pcode)
+        f.close()
+        with open("code.py","r") as f:
+            fls = File(file=f,name="code.py")
+            fs = FileSystemStorage()
+            file =  fs.save(name="code.py", content=fls)
+            fileurl = fs.url(file)
+            fls.close()
+        f.close()
+
         def input():
             a = input_part[0]
             del input_part[0]
@@ -29,7 +43,7 @@ def   home(request):
         try:
             org_stout =sys.stdout
             sys.stdout = open('output.txt','w')
-            exec(code)
+            exec(pcode)
             sys.stdout.close()
             sys.stdout = org_stout
             output = open('output.txt','r').read()
@@ -39,7 +53,8 @@ def   home(request):
             output = e
         print(output)
         data={
-            'code':code,
+            'file':fileurl,
+            'code':pcode,
             'input':intputdata,
             'output':output
         }
@@ -49,6 +64,8 @@ def   home(request):
 def RunCode():
     compile_java('code.java')
     return execute_java('code.java')
+
+
 
 def compile_java(java_file):
     subprocess.check_call(['javac', java_file])

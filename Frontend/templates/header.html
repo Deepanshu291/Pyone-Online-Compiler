@@ -24,8 +24,6 @@
             <img src=" {% static '/assets/alien.png' %}" alt="logo " class="logo" height="60px" width="70px">
             {% if user.is_authenticated %}
             <h1>Hi, {{user.username}}</h1>
-            
-            
             {% endif %}
         </div>
         <div class="title">
@@ -36,7 +34,7 @@
         {% if user.is_authenticated %}
             <a href="/logout/"><button class="btn-danger">Logout</button></a> 
         <a class="btn" type="submit" onclick="submitform()"><button class="btn-success">RUN THIS SH*T!!</button></a>
-  
+       
         
         {% else %} 
         <a  href="/login" type="button" ><button class="btn-success">Login</button></a>
