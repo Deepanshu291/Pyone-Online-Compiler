@@ -27,7 +27,7 @@ You can login and use Pyone from [this link]("https://ide.pythonanywhere.com/")
 
 <p align="middle"> 
   <img src ="https://raw.githubusercontent.com/Deepanshu291/Colloge_Django_Project/master/assets/gif/pyonegif.gif" width="360" height="200"> 
-
+<br>
   <img src ="https://raw.githubusercontent.com/Deepanshu291/Colloge_Django_Project/master/assets/screenshot/PYONE.png" width="360" height="200"> 
   <img src ="https://raw.githubusercontent.com/Deepanshu291/Colloge_Django_Project/master/assets/screenshot/Sign-in-Sign-up-Form.png" width="360" height="200">
 </p>
